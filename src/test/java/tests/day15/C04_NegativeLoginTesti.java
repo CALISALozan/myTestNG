@@ -28,23 +28,23 @@ public class C04_NegativeLoginTesti {
         qualitydemyPage.loginButonu.click();
 
         Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
-       // Driver.closeDriver();
+       Driver.closeDriver();
     }
 
 
     @Test
     public void yanlisPasswordTesti(){
         Driver.getDriver().get("https://www.qualitydemy.com/");
-        // cookies i kabul edin
+        qualitydemyPage= new QualitydemyPage();
+         // cookies i kabul edin
         Driver.getDriver().findElement(By.xpath("//a[@onclick='cookieAccept();']")).click();
-        //qualitydemyPage= new QualitydemyPage();
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys("rataxa8964@vingood.com");
         qualitydemyPage.passwordKutusu.sendKeys("123456");
         qualitydemyPage.loginButonu.click();
 
         Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
-        //Driver.closeDriver();
+        Driver.closeDriver();
 
     }
 
@@ -52,15 +52,15 @@ public class C04_NegativeLoginTesti {
     @Test
     public void yanlisEmailYanlisPasswordTesti(){
         Driver.getDriver().get("https://www.qualitydemy.com/");
+        qualitydemyPage= new QualitydemyPage();
         // cookies i kabul edin
         Driver.getDriver().findElement(By.xpath("//a[@onclick='cookieAccept();']")).click();
-        qualitydemyPage= new QualitydemyPage();
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys("mehmet@abc.com");
         qualitydemyPage.passwordKutusu.sendKeys("123456");
         qualitydemyPage.loginButonu.click();
 
         Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
-       // Driver.closeDriver();
+       Driver.closeDriver();
     }
 }
