@@ -1,4 +1,4 @@
-package tests.day16;
+package tests.day16_SmokeTests;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -28,7 +28,7 @@ public class C01_PozitifLoginTest {
 
         ReusableMethods.bekle(2);
 
-        Assert.assertTrue(qualitydemyPage.basariliGirisCoursesLinki.isDisplayed());
+         Assert.assertTrue(qualitydemyPage.basariliGirisCoursesLinki.isDisplayed());
         Driver.closeDriver();
 
 

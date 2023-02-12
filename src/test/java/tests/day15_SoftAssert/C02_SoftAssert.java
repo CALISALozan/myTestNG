@@ -1,4 +1,4 @@
-package tests.day15;
+package tests.day15_SoftAssert;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -8,17 +8,13 @@ import pages.ZeroWebAppPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class C02_SoftAssert {
 
-    @Test
+    @Test(groups = {"minireg1","minireg2"})
     public void test01(){
-
-// 1. “http://zero.webappsecurity.com/” Adresine gidin
+        // 1. “http://zero.webappsecurity.com/” Adresine gidin
         Driver.getDriver().get("http://zero.webappsecurity.com/");
         // 2. Sign in butonuna basin
         ZeroWebAppPage zeroWebAppPage=new ZeroWebAppPage();
@@ -34,7 +30,6 @@ public class C02_SoftAssert {
         Driver.getDriver().navigate().back();
         zeroWebAppPage.onlineBanking.click();
         zeroWebAppPage.payBillLinki.click();
-
         // 7. “Purchase Foreign Currency” tusuna basin
         zeroWebAppPage.purchaseFCButonu.click();
         // 8. “Currency” drop down menusunden Eurozone’u secin
@@ -69,8 +64,6 @@ public class C02_SoftAssert {
 
         ReusableMethods.bekle(5);
         softAssert.assertAll();
-       // Driver.closeDriver();
-
-
+        Driver.closeDriver();
     }
 }
